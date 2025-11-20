@@ -11,6 +11,8 @@ app.use(cors());
 
 app.get('/webhook', (res,req) => {
 
+    console.log(req);
+
     const TOKEN = process.env.MEU_TOKEN_SECRETO;
 
     const mode = req.query['hub.mode'];
