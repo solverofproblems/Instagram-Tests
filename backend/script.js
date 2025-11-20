@@ -14,9 +14,11 @@ app.get('/webhook', (res,req) => {
 
     console.log(req);
 
-    const mode = req.query['hub.mode'];
     const token_correto = req.query['hub.verify_token'];
     const challenge = req.query['hub.challenge'];
+
+    console.log(token_correto);
+    console.log(challenge);
 
     if (token_correto === TOKEN){
 
@@ -30,5 +32,3 @@ app.get('/webhook', (res,req) => {
 })
 
 app.listen(3000);
-
-console.log(TOKEN);
