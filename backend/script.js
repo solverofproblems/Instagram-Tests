@@ -10,7 +10,7 @@ app.use(cors());
 
 const TOKEN = process.env.MEU_TOKEN_SECRETO;
 
-app.get('/webhook', (res,req) => {
+app.get('/webhook', (req, res) => {
 
     console.log(req);
 
