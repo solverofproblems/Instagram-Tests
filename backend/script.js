@@ -18,7 +18,7 @@ app.get('/webhook', (res,req) => {
     const token_correto = req.query['hub.verify_token'];
     const challenge = req.query['hub.challenge'];
 
-    if (token_correto === "textosimples"){
+    if (token_correto === TOKEN){
 
       return res.send(challenge);
 
