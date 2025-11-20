@@ -19,7 +19,7 @@ app.get('/webhook', (res,req) => {
 
     if (token_correto === TOKEN){
 
-      return res.status(200).send(challenge)
+      return res.send(challenge);
 
    } else {
 
