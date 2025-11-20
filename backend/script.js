@@ -8,18 +8,17 @@ const app = express();
 
 app.use(cors());
 
+const TOKEN = process.env.MEU_TOKEN_SECRETO;
 
 app.get('/webhook', (res,req) => {
 
     console.log(req);
 
-    const TOKEN = process.env.MEU_TOKEN_SECRETO;
-
     const mode = req.query['hub.mode'];
     const token_correto = req.query['hub.verify_token'];
     const challenge = req.query['hub.challenge'];
 
-    if (token_correto === TOKEN){
+    if (token_correto === "textosimples"){
 
       return res.send(challenge);
 
@@ -31,3 +30,5 @@ app.get('/webhook', (res,req) => {
 })
 
 app.listen(3000);
+
+console.log(TOKEN);
